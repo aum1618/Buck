@@ -2,9 +2,9 @@ import React from 'react';
 import {View, SafeAreaView, StatusBar} from 'react-native';
 
 // Wrapper component for all the screens
-const Wrapper = ({children, style}) => {
+const Wrapper = ({children, style, color}) => {
   return (
-    <Background style={style}>
+    <Background style={[style, {backgroundColor: color.background}]}>
       <SafeArea>{children}</SafeArea>
     </Background>
   );

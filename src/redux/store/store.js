@@ -16,7 +16,7 @@ import {keys} from '../../shared/constants/keys';
 
 // Configuration for redux-persist to persist the Redux store
 const persistConfig = {
-  key: keys.reducer, // Unique key for the persisted data in AsyncStorage
+  key: keys.presist, // Unique key for the persisted data in AsyncStorage
   storage: AsyncStorage, // Storage engine for persisting data (AsyncStorage in this case)
   whitelist: [keys.appConfig], // List of reducers to be persisted
 };

@@ -4,6 +4,7 @@ const colors = {
   light: {
     background: palette.white,
     text: palette.black,
+    text2: palette.white,
     primaryText: palette.primary,
     secondaryText: palette.secondary,
     placeholder: palette.grayMedium,
@@ -21,6 +22,7 @@ const colors = {
   dark: {
     background: palette.darkBackground,
     text: palette.white,
+    text2: palette.black,
     primaryText: palette.primary,
     secondaryText: palette.secondary,
     placeholder: palette.grayMedium,

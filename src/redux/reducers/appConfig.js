@@ -4,6 +4,7 @@ import config from '../../shared/constants/config';
 
 const initialState = {
   locale: config.languages.en,
+  theme: config.themes.light,
 };
 
 const appConfigSlice = createSlice({
