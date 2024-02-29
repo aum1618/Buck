@@ -1,0 +1,19 @@
+{
+    "hey": "Hallo",
+    "available_balance": "Verfügbarer Saldo",
+    "income": "Einkommen",
+    "expenses": "Ausgaben",
+    "transactions": "Transaktionen",
+    "see_all": "Alle anzeigen",
+    "home": "Startseite",
+    "wallet": "Brieftasche",
+    "profile": "Profil",
+    "statistics": "Statistiken",
+    "dark_mode": "Dunkelmodus",
+    "categories": "Kategorien",
+    "import_data": "Daten importieren",
+    "language": "Sprache",
+    "privacy_policy": "Datenschutzbestimmungen",
+    "terms_of_service": "Nutzungsbedingungen",
+    "log_out": "Abmelden"
+}

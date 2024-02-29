@@ -1,0 +1,110 @@
+[
+    {
+        "title": "Salary",
+        "amount": 5000,
+        "description": "Monthly income",
+        "time": "2024-02-12T12:50:50.492Z",
+        "isIncome": true,
+        "icon": "moneyBag",
+        "color": "income"
+    },
+    {
+        "title": "Groceries",
+        "amount": 150,
+        "description": "Weekly grocery shopping",
+        "time": "2024-02-11T18:30:00.000Z",
+        "isIncome": false,
+        "icon": "shopping",
+        "color": "info"
+    },
+    {
+        "title": "Dinner",
+        "amount": 30,
+        "description": "Casual dinner with friends",
+        "time": "2024-02-10T20:15:30.123Z",
+        "isIncome": false,
+        "icon": "dining",
+        "color": "primary"
+    },
+    {
+        "title": "Freelance Project",
+        "amount": 800,
+        "description": "Completed web development project",
+        "time": "2024-02-09T09:00:00.000Z",
+        "isIncome": true,
+        "icon": "subscriptions",
+        "color": "secondary"
+    },
+    {
+        "title": "Salary",
+        "amount": 5000,
+        "description": "Monthly income",
+        "time": "2024-02-12T12:50:50.492Z",
+        "isIncome": true,
+        "icon": "moneyBag",
+        "color": "income"
+    },
+    {
+        "title": "Groceries",
+        "amount": 150,
+        "description": "Weekly grocery shopping",
+        "time": "2024-02-11T18:30:00.000Z",
+        "isIncome": false,
+        "icon": "shopping",
+        "color": "info"
+    },
+    {
+        "title": "Dinner",
+        "amount": 30,
+        "description": "Casual dinner with friends",
+        "time": "2024-02-10T20:15:30.123Z",
+        "isIncome": false,
+        "icon": "dining",
+        "color": "primary"
+    },
+    {
+        "title": "Freelance Project",
+        "amount": 800,
+        "description": "Completed web development project",
+        "time": "2024-02-09T09:00:00.000Z",
+        "isIncome": true,
+        "icon": "subscriptions",
+        "color": "secondary"
+    },
+    {
+        "title": "Salary",
+        "amount": 5000,
+        "description": "Monthly income",
+        "time": "2024-02-12T12:50:50.492Z",
+        "isIncome": true,
+        "icon": "moneyBag",
+        "color": "income"
+    },
+    {
+        "title": "Groceries",
+        "amount": 150,
+        "description": "Weekly grocery shopping",
+        "time": "2024-02-11T18:30:00.000Z",
+        "isIncome": false,
+        "icon": "shopping",
+        "color": "info"
+    },
+    {
+        "title": "Dinner",
+        "amount": 30,
+        "description": "Casual dinner with friends",
+        "time": "2024-02-10T20:15:30.123Z",
+        "isIncome": false,
+        "icon": "dining",
+        "color": "primary"
+    },
+    {
+        "title": "Freelance Project",
+        "amount": 800,
+        "description": "Completed web development project",
+        "time": "2024-02-09T09:00:00.000Z",
+        "isIncome": true,
+        "icon": "subscriptions",
+        "color": "secondary"
+    }
+]

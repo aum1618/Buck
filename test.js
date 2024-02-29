@@ -1,3 +1,1 @@
-for (let i = 2; i <= 100; i += 2) {
-  console.log(`SCALE_${i}: scaleSize(${i}),`);
-}
+console.log(new Date());

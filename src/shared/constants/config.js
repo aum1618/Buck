@@ -4,6 +4,7 @@ const themes = {
 };
 const languages = {
   en: 'en',
+  de: 'de',
 };
 const config = {
   themes: themes,

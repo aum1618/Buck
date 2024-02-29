@@ -3,4 +3,8 @@ export const screens = {
   home: 'home',
   settings: 'settings',
   tab: 'tab',
+  profile: 'profile',
+  statistics: 'statistics',
+  wallet: 'wallet',
+  transactions: 'transactions',
 };

@@ -1,1 +1,19 @@
-{}
+{
+    "hey": "Hello",
+    "available_balance": "Available Balance",
+    "income": "Income",
+    "expenses": "Expenses",
+    "transactions": "Transactions",
+    "see_all": "See All",
+    "home": "Home",
+    "wallet": "Wallet",
+    "profile": "Profile",
+    "statistics": "Statistics",
+    "dark_mode": "Dark Mode",
+    "categories": "Categories",
+    "import_data": "Import Data",
+    "language": "Language",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "log_out": "Log Out"
+}

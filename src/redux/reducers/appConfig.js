@@ -12,13 +12,16 @@ const appConfigSlice = createSlice({
   initialState,
   reducers: {
     setLanguage: (state, action) => {
-      state.language = action.payload;
+      state.locale = action.payload;
     },
-    setTheme: (state, action) => {
-      state.theme = action.payload;
+    toggleTheme: state => {
+      state.theme =
+        state.theme === config.themes.light
+          ? config.themes.dark
+          : config.themes.light;
     },
   },
 });
 
-export const {setLanguage, setTheme} = appConfigSlice.actions;
+export const {setLanguage, toggleTheme} = appConfigSlice.actions;
 export default appConfigSlice.reducer;

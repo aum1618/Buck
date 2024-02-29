@@ -1,6 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useRef, useState} from 'react';
-import {View, StyleSheet, Text, TouchableOpacity, FlatList} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  SectionList,
+  TextInput,
+} from 'react-native';
 import Header from '../../../shared/components/molecules/Header';
 import Wrapper from '../../../shared/components/organisms/Wrapper';
 import typography from '../../../shared/theme/typography';
@@ -15,9 +23,28 @@ import {FloatingButton} from '../../../shared/components/atoms/Buttons';
 import Spacer from '../../../shared/components/atoms/Spacer';
 import TransactionModal from '../../../shared/components/organisms/TransactionModal';
 import {useBottomSheetModal} from '@gorhom/bottom-sheet';
-import {screens} from '../../../shared/constants/screens';
+import {ChevronLeft, Search} from 'lucide-react-native';
 
-export default function Presenter({color, text, navigation}) {
+const DATA = [
+  {
+    title: 'Today',
+    data: Transactions,
+  },
+  {
+    title: 'Yesterday',
+    data: Transactions,
+  },
+  {
+    title: '3rd September',
+    data: Transactions,
+  },
+  {
+    title: '2nd January',
+    data: Transactions,
+  },
+];
+
+export default function Presenter({color, text}) {
   const styles = getStyles(color);
   const [animateToNumber, setAnimateToNumber] = React.useState(0);
   const {dismiss} = useBottomSheetModal();
@@ -35,96 +62,69 @@ export default function Presenter({color, text, navigation}) {
     <Wrapper color={color}>
       <TransactionModal color={color} text={text} ref={bottomSheetRef} />
       <FloatingButton onPress={handlePresentModalPress} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginVertical: SIZES.SCALE_10,
+        }}>
+        <Text
+          style={{
+            fontSize: typography.FONT_SIZE_20,
+            color: color.text,
+            fontFamily: typography.bold,
+          }}>
+          Transactions
+        </Text>
+        <TouchableOpacity style={{position: 'absolute', left: SIZES.SCALE_20}}>
+          <ChevronLeft color={color.text} size={typography.FONT_SIZE_24} />
+        </TouchableOpacity>
+      </View>
 
-      <Header color={color} text={text} />
       <View style={styles.container}>
-        <View style={styles.card}>
-          <View style={styles.contentContainer}>
-            <Circle
-              position={{left: -SIZES.SCALE_40, bottom: -SIZES.SCALE_50}}
-              color={color.primary}
-              size={180}
-            />
-            <Circle
-              position={{right: SIZES.SCALE_40, bottom: -SIZES.SCALE_10}}
-              color={color.primary}
-              size={SIZES.SCALE_38}
-            />
-            <Circle
-              position={{right: SIZES.SCALE_50, bottom: SIZES.SCALE_50}}
-              color={color.primary}
-              size={SIZES.SCALE_10}
-            />
-
-            <Circle
-              position={{right: SIZES.SCALE_100, top: SIZES.SCALE_30}}
-              color={color.accent}
-              size={SIZES.SCALE_20}
-            />
-            <Circle
-              position={{left: SIZES.SCALE_100, top: SIZES.SCALE_10}}
-              color={color.accent}
-              size={SIZES.SCALE_24}
-            />
-            <Circle
-              position={{right: -SIZES.SCALE_10, top: -SIZES.SCALE_10}}
-              color={color.accent}
-              size={SIZES.SCALE_60}
-            />
-            <Text style={styles.heading}>{text.available_balance}</Text>
-            <View style={styles.headingContainer}>
-              <Text style={styles.amount}>$ </Text>
-              <AnimatedNumber
-                animateToNumber={animateToNumber}
-                includeComma={true}
-                fontStyle={styles.amount}
-              />
-            </View>
-            <View style={[styles.HorizontalItems, {marginTop: SIZES.SCALE_10}]}>
-              <View style={styles.HorizontalItems}>
-                <View>
-                  <MoveUp color={color.income} />
-                </View>
-                <View>
-                  <Text style={styles.subHeading}>{text.income}</Text>
-                  <Text style={styles.subAmount}>$ 2,500</Text>
-                </View>
-              </View>
-              <View style={styles.HorizontalItems}>
-                <View>
-                  <MoveDown color={color.expense} />
-                </View>
-                <View>
-                  <Text style={styles.subHeading}>{text.expenses}</Text>
-                  <Text style={styles.subAmount}>$ 1,247</Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
-        <View style={[styles.HorizontalItems, {margin: SIZES.SCALE_10}]}>
-          <Text style={styles.transactionHeading}>{text.transactions}</Text>
-          <TouchableOpacity
-            onPress={() => navigation.navigate(screens.transactions)}>
-            <Text
-              style={{
-                fontSize: typography.FONT_SIZE_12,
-                color: color.placeholder,
-                fontFamily: typography.medium,
-              }}>
-              {text.see_all}
-            </Text>
-          </TouchableOpacity>
-        </View>
         <View style={styles.flex}>
-          <FlatList
+          <SectionList
+            ListHeaderComponent={() => {
+              return (
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    backgroundColor: color.border,
+                    paddingHorizontal: SIZES.SCALE_10,
+                    borderRadius: 100,
+                    alignItems: 'center',
+                    gap: SIZES.SCALE_6,
+                  }}>
+                  <Search color={color.text} size={typography.FONT_SIZE_20} />
+                  <TextInput
+                    cursorColor={color.text}
+                    placeholderTextColor={color.placeholder}
+                    style={{
+                      fontFamily: typography.regular,
+                      color: color.text,
+                      fontSize: typography.FONT_SIZE_16,
+                      flex: 1,
+                    }}
+                  />
+                </View>
+              );
+            }}
+            renderSectionHeader={({section: {title}}) => {
+              return (
+                <View
+                  style={[styles.HorizontalItems, {margin: SIZES.SCALE_10}]}>
+                  <Text style={styles.transactionHeading}>{title}</Text>
+                </View>
+              );
+            }}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={styles.FlatList}
-            ItemSeparatorComponent={
+            ItemSeparatorComponent={() => (
               <Spacer isHorizontal={false} size={SIZES.SCALE_10} />
-            }
-            data={Transactions}
-            keyExtractor={(_, index) => index.toString()}
+            )}
+            sections={DATA}
+            keyExtractor={(item, index) => item + index}
             renderItem={({item}) => {
               return (
                 <TransactionCard

@@ -1,10 +1,9 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import {Text, View} from 'react-native';
-import Animated, {EasingNode} from 'react-native-reanimated';
+import {Text, View, Animated, Easing} from 'react-native';
 
-const NUMBERS = Array(10)
-  .fill()
-  .map((_, i) => i);
+const NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const usePrevious = value => {
   const ref = React.useRef();
@@ -87,7 +86,7 @@ const AnimatedNumber = ({
         toValue: -1 * (numberHeight * animateToNumbersArr[index]),
         duration: animationDuration || 1400,
         useNativeDriver: true,
-        easing: easing || EasingNode.elastic(1.2),
+        easing: easing || Easing.elastic(1.2),
       }).start();
     });
   }, [animateToNumber, numberHeight]);

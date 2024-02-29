@@ -5,55 +5,28 @@ import {imagePaths} from '../../constants/paths';
 import SIZES from '../../theme/sizes';
 import typography from '../../theme/typography';
 
-const Header = ({color}) => {
+const Header = ({color, text}) => {
   const size = SIZES.SCALE_18;
 
   return (
     <View style={styles.container}>
       <View
         style={[
-          {overflow: 'hidden'},
+          styles.overFlow,
           {width: size * 2, height: size * 2, borderRadius: size},
         ]}>
-        <Image
-          style={{
-            width: '100%',
-            height: '100%',
-          }}
-          source={imagePaths.profile}
-        />
+        <Image style={styles.image} source={imagePaths.profile} />
       </View>
       <View style={styles.textContainer}>
-        <Text
-          style={{
-            fontSize: typography.FONT_SIZE_12,
-            color: color.placeholder,
-            fontFamily: typography.regular,
-          }}>
-          Hey Umer!
+        <Text style={[styles.welcome, {color: color.placeholder}]}>
+          {text.hey} Umer!
         </Text>
-        <Text
-          style={{
-            fontSize: typography.SCALE_16,
-            fontFamily: typography.bold,
-            color: color.text,
-          }}>
+        <Text style={[styles.time, {color: color.text}]}>
           Thursday, 12 November
         </Text>
       </View>
-      <View style={{}}>
-        <View
-          style={{
-            backgroundColor: color.secondary,
-            height: SIZES.SCALE_6,
-            width: SIZES.SCALE_6,
-            borderRadius: 4,
-            top: -SIZES.SCALE_2,
-            right: SIZES.SCALE_2,
-            position: 'absolute',
-            zIndex: 100,
-          }}
-        />
+      <View>
+        <View style={[styles.circle, {backgroundColor: color.secondary}]} />
         <Bell size={SIZES.SCALE_16} color={color.text} />
       </View>
     </View>
@@ -71,6 +44,28 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: SIZES.SCALE_10,
+  },
+  circle: {
+    height: SIZES.SCALE_6,
+    width: SIZES.SCALE_6,
+    borderRadius: 4,
+    top: -SIZES.SCALE_2,
+    right: SIZES.SCALE_2,
+    position: 'absolute',
+    zIndex: 100,
+  },
+  time: {
+    fontSize: typography.SCALE_16,
+    fontFamily: typography.bold,
+  },
+  welcome: {
+    fontSize: typography.FONT_SIZE_12,
+    fontFamily: typography.regular,
+  },
+  overFlow: {overflow: 'hidden'},
+  image: {
+    width: '100%',
+    height: '100%',
   },
 });
 
