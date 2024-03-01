@@ -1,7 +1,8 @@
 import {Dimensions} from 'react-native';
 
 // Get the dimensions of the current device window
-const {height: deviceHeight} = Dimensions.get('window');
+export const {height: deviceHeight, width: deviceWidth} =
+  Dimensions.get('window');
 
 // Define the guideline base height based on the main test device
 const guidelineBaseHeight = 667; // The height of the main test device

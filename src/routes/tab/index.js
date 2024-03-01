@@ -13,6 +13,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {useSelector} from 'react-redux';
 import locales from '../../shared/locales';
 import {screens} from '../../shared/constants/screens';
+import Budget from '../../screens/app/budget';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -62,10 +63,10 @@ export default function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name={screens.wallet}
-        component={Wallet}
+        name={screens.budget}
+        component={Budget}
         options={{
-          tabBarLabel: text.wallet,
+          tabBarLabel: text.budget,
           tabBarIcon: ({focused, color}) => {
             return (
               <TabIcon

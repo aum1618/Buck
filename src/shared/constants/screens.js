@@ -5,6 +5,6 @@ export const screens = {
   tab: 'tab',
   profile: 'profile',
   statistics: 'statistics',
-  wallet: 'wallet',
+  budget: 'Budget',
   transactions: 'transactions',
 };

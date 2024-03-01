@@ -16,12 +16,18 @@ import Spacer from '../../../shared/components/atoms/Spacer';
 import TransactionModal from '../../../shared/components/organisms/TransactionModal';
 import {useBottomSheetModal} from '@gorhom/bottom-sheet';
 import {screens} from '../../../shared/constants/screens';
+import CategoryModal from '../../../shared/components/molecules/CategoryModal';
 
 export default function Presenter({color, text, navigation}) {
   const styles = getStyles(color);
   const [animateToNumber, setAnimateToNumber] = React.useState(0);
   const {dismiss} = useBottomSheetModal();
   const bottomSheetRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  const toggleModal = () => {
+    setVisible(!visible);
+  };
 
   const handlePresentModalPress = () => bottomSheetRef.current?.present();
 
@@ -33,8 +39,14 @@ export default function Presenter({color, text, navigation}) {
 
   return (
     <Wrapper color={color}>
+      <CategoryModal
+        isVisible={visible}
+        toggleModal={toggleModal}
+        color={color}
+        text={text}
+      />
       <TransactionModal color={color} text={text} ref={bottomSheetRef} />
-      <FloatingButton onPress={handlePresentModalPress} />
+      <FloatingButton onPress={toggleModal} />
 
       <Header color={color} text={text} />
       <View style={styles.container}>

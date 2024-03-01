@@ -44,7 +44,7 @@ const DATA = [
   },
 ];
 
-export default function Presenter({color, text}) {
+export default function Presenter({color, text, navigation}) {
   const styles = getStyles(color);
   const [animateToNumber, setAnimateToNumber] = React.useState(0);
   const {dismiss} = useBottomSheetModal();
@@ -77,7 +77,9 @@ export default function Presenter({color, text}) {
           }}>
           Transactions
         </Text>
-        <TouchableOpacity style={{position: 'absolute', left: SIZES.SCALE_20}}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{position: 'absolute', left: SIZES.SCALE_20}}>
           <ChevronLeft color={color.text} size={typography.FONT_SIZE_24} />
         </TouchableOpacity>
       </View>

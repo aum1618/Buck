@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import locales from '../../../shared/locales';
 import colors from '../../../shared/theme/colors';
 
-export default function Wallet() {
+export default function Budget() {
   const currentLanguage = useSelector(state => state.appConfig.locale);
   const text = locales[currentLanguage];
   const currentTheme = useSelector(state => state.appConfig.theme);
