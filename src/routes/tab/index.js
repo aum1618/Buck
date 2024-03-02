@@ -8,7 +8,6 @@ import SIZES from '../../shared/theme/sizes';
 import {iconPaths} from '../../shared/constants/paths';
 import Profile from '../../screens/app/profile';
 import Statistics from '../../screens/app/Statistics';
-import Wallet from '../../screens/app/wallet';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {useSelector} from 'react-redux';
 import locales from '../../shared/locales';
@@ -26,6 +25,7 @@ export default function TabNavigator() {
     <Tab.Navigator
       tabBarPosition="bottom"
       screenOptions={{
+        lazy: true,
         headerShown: false,
         swipeEnabled: false,
         tabBarActiveTintColor: colors.light.secondary,

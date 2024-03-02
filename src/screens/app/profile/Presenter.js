@@ -180,7 +180,7 @@ export default function Presenter({color, currentTheme, text}) {
   );
 }
 
-const Option = ({
+export const Option = ({
   title,
   Icon,
   color,
